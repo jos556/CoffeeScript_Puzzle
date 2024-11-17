@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>拼圖遊戲</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>拼圖遊戲</h1>
+            <div class="controls">
+                <div class="control-group">
+                    <label class="file-input-label">
+                        選擇圖片
+                        <input type="file" id="imageInput" accept="image/*">
+                    </label>
+                </div>
+                <div class="control-group pieces-control">
+                    <label>拼圖片數: </label>
+                    <input type="range" id="pieceRange" min="50" max="150" value="100">
+                    <span id="pieceCount">100</span>
+                </div>
+                <div class="control-group">
+                    <button id="startGame">開始遊戲</button>
+                </div>
+            </div>
+        </header>
+        <div class="game-container">
+            <div id="puzzle-container">
+                <canvas id="puzzleCanvas"></canvas>
+            </div>
+            <div id="reference-container">
+                <h3>參考圖</h3>
+                <canvas id="referenceCanvas"></canvas>
+            </div>
+        </div>
+        <div id="completion-message" style="display: none;">
+            恭喜！拼圖完成！
+        </div>
+    </div>
+    <script src="js/coffee-script.js"></script>
+    <script type="text/coffeescript" src="puzzle.coffee"></script>
+</body>
+</html> 
